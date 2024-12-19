@@ -1,0 +1,26 @@
+{
+  "name": "event_booking",
+  "version": "1.0.0",
+  "description": "event booking app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saranvlmna/event_booking.git"
+  },
+  "keywords": [
+    "event_booking"
+  ],
+  "author": "Saranjith p",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saranvlmna/event_booking/issues"
+  },
+  "homepage": "https://github.com/saranvlmna/event_booking#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
