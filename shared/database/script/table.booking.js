@@ -1,6 +1,6 @@
 import connection from "../connection.js";
 
-const createTableQuery = `CREATE TABLE IF NOT EXISTS events (
+const createTableQuery = `CREATE TABLE IF NOT EXISTS eventbooking (
     id CHAR(36) NOT NULL PRIMARY KEY,  
     event_id CHAR(36),                 
     user_id CHAR(36),                  
