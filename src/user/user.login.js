@@ -9,8 +9,10 @@ export default async (req, res) => {
     }
 
     const user = await userFind(email, password);
-    if (!user) {
-      return res.status(404).send("User not found");
+    if (!user) return res.status(404).send("User not found");
+
+    if (user.password !== password) {
+      return res.status(404).send("Password is incorrect");
     }
     const accessToken = await tokenGenerate(user);
     res.status(200).send({ message: "Loggin successfully", accessToken });

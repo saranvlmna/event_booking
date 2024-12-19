@@ -1,10 +1,10 @@
 import connection from "../../../shared/database/connection.js";
 
-export default async (email, password) => {
+export default async (email) => {
   try {
     return new Promise((resolve, reject) => {
-      const query = `SELECT * FROM users WHERE email = ? AND password = ? LIMIT 1`;
-      connection.execute(query, [email, password], (err, results) => {
+      const query = `SELECT * FROM users WHERE email = ? LIMIT 1`;
+      connection.execute(query, [email], (err, results) => {
         if (err) {
           return reject(err);
         }
