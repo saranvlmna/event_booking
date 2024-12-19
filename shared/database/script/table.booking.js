@@ -9,11 +9,11 @@ const createTableQuery = `CREATE TABLE IF NOT EXISTS eventbooking (
     CONSTRAINT unique_event_user UNIQUE (event_code, user_id) 
 );`;
 
-connection.query(createTableQuery, (err, results) => {
-  if (err) {
+connection.query(createTableQuery, (error, result) => {
+  if (error) {
     console.error("Error creating table:", err);
   } else {
-    console.log("Event booking Table created successfully:", results);
+    console.log("Event booking Table created successfully:", result);
   }
   connection.end();
 });

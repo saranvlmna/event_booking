@@ -3,6 +3,7 @@ import authenticate from "../../shared/middlewares/authenticate.js";
 import roleFilters from "../../shared/middlewares/role.filters.js";
 import constants from "../../shared/utilities/constants.js";
 import eventBook from "./event.book.js";
+import eventBookedCount from "./event.booked.count.js";
 import eventCreate from "./event.create.js";
 const eventRouter = express.Router();
 
@@ -14,5 +15,7 @@ eventRouter.post(
 );
 
 eventRouter.post("/book", authenticate, eventBook);
+
+eventRouter.post("/booked/count", authenticate, eventBookedCount);
 
 export default eventRouter;

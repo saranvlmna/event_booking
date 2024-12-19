@@ -10,11 +10,11 @@ const createTableQuery = `CREATE TABLE IF NOT EXISTS events (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );`;
 
-connection.query(createTableQuery, (err, results) => {
-  if (err) {
+connection.query(createTableQuery, (error, result) => {
+  if (error) {
     console.error("Error creating table:", err);
   } else {
-    console.log("Event Table created successfully:", results);
+    console.log("Event Table created successfully:", result);
   }
   connection.end();
 });

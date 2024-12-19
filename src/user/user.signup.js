@@ -1,17 +1,17 @@
-import userCreate from "./libs/user.create.js";
-import userFind from "./libs/user.find.js";
+import createUser from "./libs/user.create.js";
+import findUser from "./libs/user.find.js";
 
 export default async (req, res) => {
   try {
     const { email, password, name } = req.body;
     if (!email || !password || !name) {
-      return res.status(400).send("Params are required");
+      res.status(400).send("Params are required");
     }
 
-    const isExist = await userFind(email);
-    if (isExist) return res.status(404).send("User already exist given mailId");
+    const is_exist = await findUser(email);
+    if (is_exist) res.status(404).send("User already exist given mail Id");
 
-    await userCreate({ email, password, name });
+    await createUser({ email, password, name });
     res.status(200).send({ message: "Signup successfully" });
   } catch (error) {
     console.error(error);

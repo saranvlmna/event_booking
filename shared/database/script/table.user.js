@@ -10,11 +10,11 @@ const createTableQuery = `CREATE TABLE IF NOT EXISTS users (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );`;
 
-connection.query(createTableQuery, (err, results) => {
-  if (err) {
-    console.error("Error creating table:", err);
+connection.query(createTableQuery, (error, result) => {
+  if (error) {
+    console.error("Error creating table:", error);
   } else {
-    console.log("User Table created successfully:", results);
+    console.log("User Table created successfully:", result);
   }
   connection.end();
 });
