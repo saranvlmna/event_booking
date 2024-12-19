@@ -1,5 +1,6 @@
-const express = require("express");
-const { default: config } = require("./shared/config/config");
+import express from "express";
+import config from "./shared/config/config.js";
+
 const app = express();
 const port = config.app.port;
 
