@@ -1,3 +1,6 @@
+import dotevn from "dotenv";
+dotevn.config();
+
 const config = {
   app: {
     port: process.env.PORT || 4578,

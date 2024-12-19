@@ -1,9 +1,7 @@
-import dotevn from "dotenv";
 import express from "express";
 import config from "./shared/config/config.js";
 import eventRouter from "./src/event/router.js";
 import userRouter from "./src/user/router.js";
-dotevn.config();
 
 const app = express();
 const port = config.app.port;
