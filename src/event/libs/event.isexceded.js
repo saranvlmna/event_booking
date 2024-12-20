@@ -7,9 +7,9 @@ export default async (code) => {
 
     const event_query = `SELECT events.capacity FROM events WHERE code=?`;
     const event = await new Promise((resolve, reject) => {
-      connection.execute(event_query, [code], (err, rows) => {
+      connection.execute(event_query, [code], (err, result) => {
         if (err) reject(err);
-        resolve(rows[0]?.capacity);
+        resolve(result[0]?.capacity);
       });
     });
 
