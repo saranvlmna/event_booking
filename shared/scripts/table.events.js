@@ -1,6 +1,6 @@
-import connection from "../connection.js";
+import connection from "../config/mysql.config.js";
 
-const createTableQuery = `CREATE TABLE IF NOT EXISTS events (
+const create_table_query = `CREATE TABLE IF NOT EXISTS events (
     id CHAR(36) NOT NULL PRIMARY KEY DEFAULT (UUID()),
     name VARCHAR(255) NOT NULL,
     code VARCHAR(255) NOT NULL,
@@ -10,7 +10,7 @@ const createTableQuery = `CREATE TABLE IF NOT EXISTS events (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );`;
 
-connection.query(createTableQuery, (error, result) => {
+connection.query(create_table_query, (error, result) => {
   if (error) {
     console.error("Error creating table:", err);
   } else {

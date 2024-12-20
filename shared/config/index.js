@@ -4,6 +4,7 @@ dotevn.config();
 const config = {
   app: {
     port: process.env.PORT || 4578,
+    auth_secret: process.env.APP_SECRET || "sdfgsdgs",
   },
   db: {
     host: process.env.DB_HOST || "localhost",

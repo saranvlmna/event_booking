@@ -1,4 +1,4 @@
-import connection from "../../../shared/database/connection.js";
+import connection from "../../../shared/config/mysql.config.js";
 
 export default async (user_id, event_code) => {
   try {

@@ -7,7 +7,12 @@
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run:script1": "node ./shared/scripts/table.user.js",
+    "run:script2": "node ./shared/scripts/table.events.js",
+    "run:script3": "node ./shared/scripts/table.booking.js",
+    "run:script4": "node ./shared/scripts/seeder.admin.js",
+    "run:scripts": "npm run run:script1 && npm run run:script2 && npm run run:script3 && npm run run:script4"
   },
   "repository": {
     "type": "git",

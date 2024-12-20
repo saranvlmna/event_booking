@@ -4,7 +4,7 @@ import fetchEventBookedCount from "./libs/event.booked.count.js";
 export default async (req, res) => {
   try {
     const code = req.body.code;
-    if (!code) res.status(400).send("Event code are required");
+    if (!code) return res.status(400).send("Event code is required");
     let booked_count = 0;
 
     booked_count = await redisClient.get(code);
@@ -13,13 +13,13 @@ export default async (req, res) => {
       await redisClient.set(code, booked_count);
     }
 
-    res.status(200).send({
-      message: "Fetch booked event count successfully",
+    return res.status(200).send({
+      message: "Booked event count fetched successfully",
       event_id: code,
-      booked_count: parseFloat(booked_count),
+      booked_count: parseInt(booked_count),
     });
   } catch (error) {
     console.error(error);
-    res.status(500).send("Internal Server Error");
+    return res.status(500).send("Internal Server Error");
   }
 };

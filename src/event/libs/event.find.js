@@ -1,4 +1,4 @@
-import connection from "../../../shared/database/connection.js";
+import connection from "../../../shared/config/mysql.config.js";
 
 export default (code) => {
   try {

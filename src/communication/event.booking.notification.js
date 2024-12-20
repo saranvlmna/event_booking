@@ -1,5 +1,5 @@
-import connectRabitMQ from "../../shared/config/rabitmq.config.js";
-import eventFind from "../event/libs/event.find.js";
+import connectRabitMQ from "../../shared/config/rabbitmq.config.js";
+import findEvent from "../event/libs/event.find.js";
 import findUser from "../user/libs/user.find.js";
 const consumeEventQueue = async (queue) => {
   try {
@@ -11,12 +11,12 @@ const consumeEventQueue = async (queue) => {
         queue_channel.ack(msg);
         const data = JSON.parse(msg.content);
 
-        const user = await findUser(data.email);
-        const event = await eventFind(data.code);
+        const user = await findUser(data?.email);
+        const event = await findEvent(data?.code);
 
         const notification_object = {
           to: user.email,
-          payload: `Hi ${user.name} you are successfully registed with the ${event.name} event. thanks`,
+          payload: `Hi ${user?.name} you are successfully registed with the ${event?.name} event. thanks`,
         };
 
         console.log("====EMAIL NOTIFICATION OBJECT=====", notification_object);
