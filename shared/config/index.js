@@ -13,8 +13,12 @@ const config = {
     database: process.env.DB_DATABASE || null,
   },
   redis: {
-    host: process.env.REDIS_HOST || "redis://127.0.0.1",
+    host: process.env.REDIS_HOST || "redis://localhost",
     port: process.env.REDIS_PORT || 6379,
+  },
+  rabitmq: {
+    hostname: process.env.RABIT_MQ_HOST || "localhost",
+    port: process.env.RABIT_MQ_PORT || 5672,
   },
 };
 export default config;

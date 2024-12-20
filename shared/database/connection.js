@@ -8,7 +8,7 @@ connection.connect((error) => {
     console.error("error connecting to MySQL: " + error.stack);
     return;
   }
-  console.log(`connected to MySQL as ${config.db.database}`);
+  console.log(`connected to MySQL ${config.db.host}:${config.db.port}`);
 });
 
 export default connection;
