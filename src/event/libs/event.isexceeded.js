@@ -1,9 +1,9 @@
 import connection from "../../../shared/config/mysql.config.js";
-import fetchEventBookedCount from "./event.booked.count.js";
+import redisClient from "../../../shared/config/reddis.config.js";
 
 export default async (code) => {
   try {
-    const count = await fetchEventBookedCount(code);
+    const count = parseInt(await redisClient.get(code)) || 0;
 
     const event_query = `SELECT events.capacity FROM events WHERE code=?`;
     const event = await new Promise((resolve, reject) => {

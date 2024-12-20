@@ -1,5 +1,11 @@
 # project description
 
+This project is an event booking platform built with Node.js for the backend,
+uses MySQL for managing user data and event details,
+while Redis is utilized for real-time storage of event booking counts to ensure high-speed performance and scalability.
+To enhance user experience, the system integrates RabbitMQ for queuing tasks,
+such as sending confirmation emails upon successful bookings.
+
 # pre requisites || set up the environment
 
 1. install nodejs into system. version => 18
