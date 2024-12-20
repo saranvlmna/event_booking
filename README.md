@@ -1,13 +1,10 @@
 # project description
 
-
-
-
 # pre requisites || set up the environment
 
 1. install nodejs into system. version => 18
 2. intall MySQL into system. and create user, databasse to grand all permission user to database
-3. run scripts for create tables and seeder admin. run command to terminal> "yarn intsall && yarn run:scripts"
+3. run scripts for create tables and seeder admin. run command to terminal> "yarn install && yarn run:scripts"
 4. install Redis into the system.
 5. install RabbitMQ into the system.
 6. create a .env file and add app config using keys "PORT, ACCESS_TOKEN_EXP, ACCESS_TOKEN_KEY"
