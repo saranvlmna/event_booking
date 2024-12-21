@@ -12,7 +12,7 @@ const create_table_query = `CREATE TABLE IF NOT EXISTS users (
 
 connection.query(create_table_query, (error, result) => {
   if (error) {
-    console.error("Error creating table:", error);
+    console.error(error);
   } else {
     console.log("User Table created successfully:", result);
   }
