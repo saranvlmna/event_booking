@@ -19,8 +19,8 @@ const config = {
     port: process.env.REDIS_PORT || 6379,
   },
   rabitmq: {
-    hostname: process.env.RABIT_MQ_HOST || "localhost",
-    port: process.env.RABIT_MQ_PORT || 5672,
+    hostname: process.env.RABBIT_MQ_HOST || "localhost",
+    port: process.env.RABBIT_MQ_PORT || 5672,
   },
 };
 export default config;
